@@ -1,0 +1,52 @@
+<OntologyConfiguration>
+	<!-- Описание онтологии. -->
+    <MainOntology>
+        <URL>http://www.owl-ontologies.com/vw_cbr.owl</URL>
+        <LocalCopy>vw_cbr.owl</LocalCopy>
+    </MainOntology>
+
+    <CaseMainConcept>Case</CaseMainConcept>
+
+    <DescriptionClassName>cbrapp.CbrDescription</DescriptionClassName>
+
+    <DescriptionMappings>
+		<!-- Описание класса опасности. -->
+		<Map>
+			<Property>danger</Property>			<!-- Свойство case в онтологии -->
+			<Concept>Danger</Concept>			<!-- Тип свойства в онтологии  -->
+			<Attribute>danger</Attribute>		<!-- Поле в java классе        -->
+		</Map>
+		<!-- Описание количества отходов. -->
+		<Map>
+			<Property>count</Property>
+			<Concept>TrashCount</Concept>
+			<Attribute>count</Attribute>
+		</Map>
+		<!-- Описание агрегатного состояния. -->
+		<Map>
+			<Property>state</Property>
+			<Concept>AggregateState</Concept>
+			<Attribute>state</Attribute>
+		</Map>
+		<!-- Описание времени разложения. -->
+		<Map>
+			<Property>time</Property>
+			<Concept>FullDestroyTime</Concept>
+			<Attribute>time</Attribute>
+		</Map>
+		<!-- Описание типа отходов. -->
+		<Map>
+			<Property>types</Property>
+			<Concept>Type</Concept>
+			<Attribute>types</Attribute>
+		</Map>
+    </DescriptionMappings>
+    <SolutionClassName>cbrapp.CbrSolution</SolutionClassName>
+    <SolutionMappings>
+        <Map>
+            <Property>solution</Property>
+            <Concept>Solutions</Concept>
+            <Attribute>result</Attribute>
+        </Map>
+    </SolutionMappings>
+</OntologyConfiguration>

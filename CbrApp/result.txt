@@ -1,0 +1,1 @@
+{"mainConcept":{"name":"Case_1","useShortName":true},"result":{"name":"solutions_1","useShortName":true}}

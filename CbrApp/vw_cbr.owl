@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.owl-ontologies.com/vw_cbr.owl#"
+  xml:base="http://www.owl-ontologies.com/vw_cbr.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="FullDestroyTime"/>
+  <owl:Class rdf:ID="TrashCount"/>
+  <owl:Class rdf:ID="Solutions"/>
+  <owl:Class rdf:ID="Case"/>
+  <owl:Class rdf:ID="AggregateState"/>
+  <owl:Class rdf:ID="Danger"/>
+  <owl:Class rdf:ID="Type"/>
+  <owl:DatatypeProperty rdf:ID="solutionsValue">
+    <rdfs:domain rdf:resource="#Solutions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="types">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Type"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="timeValue">
+    <rdfs:domain rdf:resource="#FullDestroyTime"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="time">
+    <rdfs:range rdf:resource="#FullDestroyTime"/>
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="count">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="#TrashCount"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="solution">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Solutions"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="state">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdfs:range rdf:resource="#AggregateState"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="danger">
+    <rdfs:domain rdf:resource="#Case"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Danger"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="trashCountValue">
+    <rdfs:domain rdf:resource="#TrashCount"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="stateValue">
+    <rdfs:domain rdf:resource="#AggregateState"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Газообразное</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Жидкое</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Твердое</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <Type rdf:ID="Макулатура"/>
+  <Case rdf:ID="Case_1">
+    <count>
+      <TrashCount rdf:ID="tt_1">
+        <trashCountValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >85.4</trashCountValue>
+      </TrashCount>
+    </count>
+    <solution>
+      <Solutions rdf:ID="solutions_1">
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Etiam non diam sit amet mi faucibus fringilla</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Donec commodo, purus nec auctor interdum, lectus odio dapibus tellus, et iaculis ante nulla et quam</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Aliquam scelerisque ante id velit viverra dapibus sit amet nec nequ.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Cras ligula est, commodo et mauris eget, ornare tempor sapien.</solutionsValue>
+      </Solutions>
+    </solution>
+    <danger>
+      <Danger rdf:ID="III_class"/>
+    </danger>
+    <state>
+      <AggregateState rdf:ID="as_1">
+        <stateValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Газообразное</stateValue>
+      </AggregateState>
+    </state>
+    <time>
+      <FullDestroyTime rdf:ID="fdt_1">
+        <timeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >1.0</timeValue>
+      </FullDestroyTime>
+    </time>
+    <types>
+      <Type rdf:ID="Бутылки_из_под_напитков"/>
+    </types>
+  </Case>
+  <Type rdf:ID="Одноразовая_посуда"/>
+  <Type rdf:ID="Листовки"/>
+  <Type rdf:ID="Линолеум"/>
+  <Case rdf:ID="Case_2">
+    <time>
+      <FullDestroyTime rdf:ID="fdt_2">
+        <timeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >22.0</timeValue>
+      </FullDestroyTime>
+    </time>
+    <state>
+      <AggregateState rdf:ID="as_2">
+        <stateValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Жидкое</stateValue>
+      </AggregateState>
+    </state>
+    <danger>
+      <Danger rdf:ID="II_class"/>
+    </danger>
+    <solution>
+      <Solutions rdf:ID="solutions_2">
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Etiam non diam sit amet mi faucibus fringilla.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Donec commodo, purus nec auctor interdum, lectus odio dapibus tellus, et iaculis ante nulla et quam.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Aliquam scelerisque ante id velit viverra dapibus sit amet nec neque.</solutionsValue>
+      </Solutions>
+    </solution>
+    <types>
+      <Type rdf:ID="Водопроводная_труба"/>
+    </types>
+    <count>
+      <TrashCount rdf:ID="tt_2">
+        <trashCountValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >36.0</trashCountValue>
+      </TrashCount>
+    </count>
+  </Case>
+  <Type rdf:ID="Плетёные_мешки_и_сумки"/>
+  <Type rdf:ID="Пузырчатая_упаковка"/>
+  <Type rdf:ID="Стаканчик_из_под_йогурта"/>
+  <Type rdf:ID="Скотч"/>
+  <Type rdf:ID="Картонная_упаковка"/>
+  <Type rdf:ID="Перчатки"/>
+  <Case rdf:ID="Case_3">
+    <time>
+      <FullDestroyTime rdf:ID="fdt_3">
+        <timeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >18.0</timeValue>
+      </FullDestroyTime>
+    </time>
+    <solution>
+      <Solutions rdf:ID="solutions_3">
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Etiam non diam sit amet mi faucibus fringilla.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Donec commodo, purus nec auctor interdum, lectus odio dapibus tellus, et iaculis ante nulla et quam.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Aliquam scelerisque ante id velit viverra dapibus sit amet nec neque.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Cras ligula est, commodo et mauris eget, ornare tempor sapien.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Nam aliquet lectus velit, et elementum sem dignissim a. Integer congue dolor non ullamcorper dictum.</solutionsValue>
+      </Solutions>
+    </solution>
+    <types>
+      <Type rdf:ID="Журналы"/>
+    </types>
+    <count>
+      <TrashCount rdf:ID="tt_3">
+        <trashCountValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >17.2</trashCountValue>
+      </TrashCount>
+    </count>
+    <state>
+      <AggregateState rdf:ID="as_3">
+        <stateValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Твердое</stateValue>
+      </AggregateState>
+    </state>
+    <danger>
+      <Danger rdf:ID="IV_class"/>
+    </danger>
+  </Case>
+  <Type rdf:ID="Канистра"/>
+  <Type rdf:ID="Корпус_лодки"/>
+  <Type rdf:ID="Упаковочная_плёнка"/>
+  <Case rdf:ID="Case_4">
+    <time>
+      <FullDestroyTime rdf:ID="fdt_4">
+        <timeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >2.5</timeValue>
+      </FullDestroyTime>
+    </time>
+    <types>
+      <Type rdf:ID="Книги"/>
+    </types>
+    <solution>
+      <Solutions rdf:ID="solutions_4">
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Curabitur eget vestibulum neque, sed tristique tellus.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Nunc sed varius libero, id posuere odio.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Etiam et justo in felis molestie scelerisque.</solutionsValue>
+      </Solutions>
+    </solution>
+    <state rdf:resource="#as_3"/>
+    <danger>
+      <Danger rdf:ID="I_class"/>
+    </danger>
+    <count>
+      <TrashCount rdf:ID="tt_4">
+        <trashCountValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >63.4</trashCountValue>
+      </TrashCount>
+    </count>
+  </Case>
+  <Type rdf:ID="Рекламные_баннеры"/>
+  <Type rdf:ID="Сандвич_панель"/>
+  <Case rdf:ID="Case_5">
+    <danger>
+      <Danger rdf:ID="V_class"/>
+    </danger>
+    <count>
+      <TrashCount rdf:ID="tt_5">
+        <trashCountValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >97.7</trashCountValue>
+      </TrashCount>
+    </count>
+    <solution>
+      <Solutions rdf:ID="solutions_5">
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >In egestas ultrices diam sed commodo.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Vivamus a nunc ornare, eleifend lectus id, sodales orci.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Nulla facilisi.</solutionsValue>
+        <solutionsValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Mauris id quam eu justo faucibus volutpat id sit amet nulla.</solutionsValue>
+      </Solutions>
+    </solution>
+    <state rdf:resource="#as_2"/>
+    <types>
+      <Type rdf:ID="Музыкальные_пластинки"/>
+    </types>
+    <time>
+      <FullDestroyTime rdf:ID="fdt_5">
+        <timeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+        >3.2</timeValue>
+      </FullDestroyTime>
+    </time>
+  </Case>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->
