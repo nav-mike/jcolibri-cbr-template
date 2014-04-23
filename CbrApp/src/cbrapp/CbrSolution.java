@@ -7,20 +7,21 @@ import jcolibri.cbrcore.CaseComponent;
 import jcolibri.datatypes.Instance;
 
 /**
- * Класс результата CBR цикла.
+ * Class which store result of CBR.
  * @author M. Navrotskiy
+ * @version 1.0
  */
 public class CbrSolution implements CaseComponent {
 
-    /* Поля класса. */
-    /** Концепт. */
+    /* Class fields. */
+    /** Main concept. */
     private Instance mainConcept;
-    /** Значение результата. */
+    /** Value of result. */
     private Instance result;
 
     /**
-     * Метод преобразования в строку.
-     * @return Значение всех полей класса в виде строки.
+     * Convert class object to JSON string..
+     * @return JSON string.
      */
     @Override
     public String toString() {
@@ -29,40 +30,40 @@ public class CbrSolution implements CaseComponent {
     }
 
     /**
-     * Метод изменения значения результата.
-     * @param result_has_value Значение результата.
+     * Set new value of result.
+     * @param result_has_value New value.
      */
     public void setResult (Instance result_has_value) {
         this.result = result_has_value;
     }
 
     /**
-     * Метод получения значения результата.
-     * @return Значение результата.
+     *Get value of result.
+     * @return Value of result.
      */
     public Instance getResult() {
         return result;
     }
     
     /**
-     * Метод получения главного концепта.
-     * @return Концепт.
+     * Get value of main concept.
+     * @return Main concept.
      */
     public Instance getMainConcept() {
         return mainConcept;
     }
     
     /**
-     * Метод задания главного концепта.
-     * @param mainConcept Концепт.
+     * Set value of main concept.
+     * @param mainConcept main concept.
      */
     public void setMainConcept(Instance mainConcept) {
         this.mainConcept = mainConcept;
     }
     
     /**
-     * Метод получения идентификатора атрибута.
-     * @return Значение идентификатора атрибута.
+     * Get attributes id.
+     * @return Attributes id.
      */
     @Override
     public Attribute getIdAttribute() {

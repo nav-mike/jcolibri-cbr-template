@@ -24,43 +24,43 @@ import jcolibri.method.retrieve.selection.SelectCases;
 import jcolibri.util.FileIO;
 
 /**
- * Класс приложения CBR.
+ * CBR-app class.
  * @author M. Navrotskiy
+ * @version 1.0
  */
 public class CbrApplication implements StandardCBRApplication{
     
-    /* Поля класса. */
-    /** Запрос в базу прецедентов. */
+    /* Class fields. */
+    /** CBR-query. */
     private CBRQuery query;
-    /** Результат работы CBR. */
+    /** CBR-result. */
     private Collection<RetrievalResult> eval;
-    /** База прецедентов. */
+    /** Case base. */
     private CBRCaseBase caseBase;
-    /** Набор найденных прецедентов. */
+    /** Selected cases */
     private Collection<CBRCase> selectedCase;
-    /** Связыватель с онтологией. */
+    /** Owl connector. */
     private OntologyConnector connector;
-    /** Объект класса. */
+    /** Object of current class. */
     private static CbrApplication instance;
-    /** Найденный по запросу прецедент. */
+    /** CBR-result (single value, not collection). */
     private CBRCase result;
     
     /**
-     * Метод получения результата CBR.
-     * @return Результат CBR.
+     * Get CBR-result.
+     * @return Value of CBR result.
      */
     public CBRCase result() {
         return this.result;
     }
     
     /**
-     * Конструктор по умолчанию.
+     * Default constructor.
      */
     public CbrApplication(){}
 
     /**
-     * Метод подготовки приложения (конфигурирование).
-     * @throws ExecutionException 
+     * Configuration.
      */
     @Override
     public void configure() throws ExecutionException {
@@ -73,9 +73,8 @@ public class CbrApplication implements StandardCBRApplication{
     }
 
     /**
-     * Метод подготовки CBR цикла.
-     * @return Прецеденты.
-     * @throws ExecutionException 
+     * Pre cycle actions
+     * @return Case base.
      */
     @Override
     public CBRCaseBase preCycle() throws ExecutionException {
@@ -91,9 +90,8 @@ public class CbrApplication implements StandardCBRApplication{
     }
 
     /**
-     * Метод CBR цикла.
-     * @param cbrq Запрос к решателю.
-     * @throws ExecutionException 
+     * CBR cycle.
+     * @param cbrq CBR query.
      */
     @Override
     public void cycle(CBRQuery cbrq) throws ExecutionException {
@@ -116,15 +114,14 @@ public class CbrApplication implements StandardCBRApplication{
     }
 
     /**
-     * Метод выполняющийся после цикла.
-     * @throws ExecutionException 
+     * Post cycle actions
      */
     @Override
     public void postCycle() throws ExecutionException {}
 
     /**
-     * Метод формирования весов и мер близости.
-     * @return Список аттрибутов поиска с весами и мерами близости.
+     * Create similarity config.
+     * @return Similarity config.
      */
     private static NNConfig getSimilarityConfig() {
         NNConfig result = new NNConfig();

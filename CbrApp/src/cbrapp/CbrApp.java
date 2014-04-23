@@ -11,13 +11,14 @@ import jcolibri.exception.ExecutionException;
 import jcolibri.exception.OntologyAccessException;
 
 /**
- * Класс приложения.
+ * The main class of app.
  * @author M. Navrotskiy
  * @version 1.0
  */
 public class CbrApp {
 
     /**
+     * The main function of app.
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -27,8 +28,8 @@ public class CbrApp {
     }
     
     /**
-     * Функция записи результата CBR в файл.
-     * @param result Результат работы CBR.
+     * Write CBR result to file.
+     * @param result Result of CBR.
      */
     private static void writeResult (String result) {
         try {
@@ -41,8 +42,8 @@ public class CbrApp {
     }
     
     /**
-     * Функция выполнения CBR.
-     * @return Результат CBR анализа.
+     * Funciton which exec CBR..
+     * @return Result of CBR.
      */
     private static String cbr () {
         try {
@@ -52,7 +53,7 @@ public class CbrApp {
             app.preCycle();
             
             CbrDescription description = new CbrDescription();
-            description.setCount(new Instance("tt_1")); // Параметры запроса
+            description.setCount(new Instance("tt_1")); // Request
             description.setDanger(new Instance("I_class"));
             description.setState(new Instance("as_1"));
             description.setTime(new Instance("fdt_1"));

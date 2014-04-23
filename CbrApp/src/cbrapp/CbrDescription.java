@@ -7,83 +7,84 @@ import jcolibri.cbrcore.CaseComponent;
 import jcolibri.datatypes.Instance;
 
 /**
- * Класс описания прецедента.
+ * Class which description case.
  * @author M. Navrotskiy
+ * @version 1.0
  */
 public class CbrDescription implements CaseComponent {
     
-    /* Поля класса. */
-    /** Класс опасности. */
+    /* Class fields. */
+    /** Hazard class. */
     private Instance danger;
-    /** Количество отходов. */
+    /** Amount of waste. */
     private Instance count;
-    /** Агрегатное состояние. */
+    /** Aggregare state. */
     private Instance state;
-    /** Время полного разложения. */
+    /** Time of full recycling (depricated). */
     private Instance time;
-    /** Тип отходов. */
+    /** Type of waste. */
     private Instance types;
-    /** Главный консепт. */
+    /** Main concept. */
     private Instance mainConcept;
 
     /**
-     * Метод изменения значения типа отходов.
-     * @param types Значение типа отходов.
+     * Set type of waste.
+     * @param types Value of type.
      */
     public void setTypes(Instance types) {
         this.types = types;
     }
 
     /**
-     * Метод изменения значения полного времени разложения.
-     * @param time Значение полного времени разложения.
+     * Set time of full recycling.
+     * @param time Value of time.
      */
     public void setTime(Instance time) {
         this.time = time;
     }
 
     /**
-     * Метод изменения значения агрегатного состояния.
-     * @param state Значение агрегатного состояния.
+     * Set aggregate state.
+     * @param state Value of state.
      */
     public void setState(Instance state) {
         this.state = state;
     }
 
     /**
-     * Метод изменения значения класса опасности.
-     * @param danger Значение класса опасности.
+     * Set hazard class.
+     * @param danger Value of class.
      */
     public void setDanger(Instance danger) {
         this.danger = danger;
     }
 
     /**
-     * Метод изменения значения количества отходов.
-     * @param count Значение количества отходов.
+     * Set amount of waste.
+     * @param count Value of amount.
      */
     public void setCount(Instance count) {
         this.count = count;
     }
 
     /**
-     * Метод получения значения типа отходов.
-     * @return Значение типа отходов.
+     * Get value of type of waste.
+     * @return Type of waste.
      */
     public Instance getTypes() {
         return types;
     }
 
     /**
-     * Метод получения значения времени разложения.
-     * @return Значение времени разложения.
+     * Get value of time of full recycling.
+     * @return Time of full recycling.
      */
     public Instance getTime() {
         return time;
     }
 
     /**
-     * Метод получения значения агрегатного состояния.
+     * Get value of aggregate state.
      * @return Значение агрегатного состояния.
      */
     public Instance getState() {
@@ -91,40 +92,40 @@ public class CbrDescription implements CaseComponent {
     }
 
     /**
-     * Метод получения значения класса опасности.
-     * @return Значение класса опасности.
+     * Get value of hazard class.
+     * @return Hazard class.
      */
     public Instance getDanger() {
         return danger;
     }
 
     /**
-     * Метод получения количества отходов.
-     * @return Значение количества отходов.
+     * Get value of amount of waste.
+     * @return Amount of waste.
      */
     public Instance getCount() {
         return count;
     }
 
     /**
-     * Метод изменения главного концепта.
-     * @param mainConcept Новый главный концепт.
+     * Set main concept value.
+     * @param mainConcept value of main concept.
      */
     public void setMainConcept(Instance mainConcept) {
         this.mainConcept = mainConcept;
     }
 
     /**
-     * Метод получения значения главного концепта.
-     * @return Значение главного концепта.
+     * Get value of main concept.
+     * @return main concept value.
      */
     public Instance getMainConcept() {
         return mainConcept;
     }
 
     /**
-     * Метод преобразования в строку.
-     * @return Значение всех полей класса в виде строки.
+     * To string method.
+     * @return Class object to string.
      */
     @Override
     public String toString() {
@@ -132,10 +133,6 @@ public class CbrDescription implements CaseComponent {
         return gson.toJson(this);
     }
 
-    /**
-     * Метод получения идентификатора атрибута.
-     * @return Идентификатор атрибута.
-     */
     @Override
     public Attribute getIdAttribute() {
         return new Attribute("mainConcept", this.getClass());
